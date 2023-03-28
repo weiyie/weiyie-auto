@@ -15,7 +15,7 @@
 import { defineComponent, reactive } from "vue";
 import { showFailToast, showSuccessToast } from "vant";
 import { LoginForm } from "#/type";
-import { useBase } from "@base";
+import { useBase } from "@/base";
 
 export default defineComponent({
   name: "login-page",
@@ -98,6 +98,8 @@ export default defineComponent({
   .login-content {
     width: 400px;
     padding: 60px;
+    margin: 20px 0;
+    height: calc(100vh - 40px);
   }
 
   .van-cell-group {

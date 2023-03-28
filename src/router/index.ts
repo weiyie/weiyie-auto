@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import { useBase } from "@base";
-import Home from "@views/home/index.vue";
+import { useBase } from "@/base";
+import Home from "@/views/home/index.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -20,7 +20,7 @@ const router = createRouter({
     {
       path: "/login",
       name: "login",
-      component: () => import("@views/login/index.vue"),
+      component: () => import("@/views/login/index.vue"),
       meta: {
         index: 1,
       },
@@ -31,7 +31,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const { user } = useBase();
 
-  if (!user?.ws?.token) {
+  if (!user?.ws?.token && ![to.path, from.path].includes("/login")) {
     return next("/login");
   }
 

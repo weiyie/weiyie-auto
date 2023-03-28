@@ -33,7 +33,7 @@ export default (): UserConfig => {
     },
     resolve: {
       alias: {
-        "@": resolve("src/"),
+        "@/": resolve("src/") + '/',
         "#": resolve("types/"),
       },
     },

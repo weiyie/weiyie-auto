@@ -6,6 +6,7 @@ import router from "../router";
 
 import vant from "vant";
 
+import "@/assets/css/base.less";
 import "vant/lib/index.css";
 
 export async function bootstrap(app: App) {
